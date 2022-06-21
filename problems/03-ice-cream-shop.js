@@ -14,8 +14,27 @@ iceCreamShop([], 'honey lavender'); // false
 
 
 // your code here
+function iceCreamShop(flavors, favorite) {
+  if (flavors.length === 0) {
+    return false
+  }
+  // if (flavors[0] === favorite) {
+  //   return true
+  // }
+  // return iceCreamShop(flavors.slice(1), favorite)
 
 
+
+
+  let treat = iceCreamShop(flavors.slice(1), favorite)
+  //console.log(treat)
+  return flavors[0] === favorite || treat
+
+}
+
+
+console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
+console.log(iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea')); // true
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = iceCreamShop;
