@@ -12,8 +12,15 @@ range(7, 6); // []
 
 
 // your code here
+function range(start, end) {
+  if (start >= end) {
+    return []
+  }
+  return [start, ...range(start +1, end)]
+  //return [start].concat(range(start+1, end))
+}
 
-
+console.log(range(1, 5))
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = range;
