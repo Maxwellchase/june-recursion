@@ -37,14 +37,32 @@ advancedExponent(2, 12); // 4096
 For each of the examples above, figure out how many times your code should
 be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
+
+Write a more advanced version of the recursive `exponent` function that
+you just wrote. Instead of multiplying the base number by itself n power of
+times, like you did previously, you will be squaring the results of the base
+number raised to the power of half of n power.
+exponent(b, 0) // 1
+exponent(b, 1) // b
+exponent(b, n) // exponent(b, n / 2) ** 2             [for even n]
+exponent(b, n) // b * (exponent(b, (n - 1) / 2) ** 2) [for odd n]
 ***********************************************************************/
 
 
 function advancedExponent(b, n) {
-  // your code here
+  if (n === 0) {
+    return 1
+  }
+  if (n === 1) {
+    return b
+  }
+  if ( n % 2 === 0) {
+    return advancedExponent(b, n / 2) ** 2
+  }
+  else {return b * (advancedExponent(b, (n - 1) / 2) ** 2)}
 }
 
-
+console.log(advancedExponent(2, 3))
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = advancedExponent;
