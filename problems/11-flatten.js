@@ -10,8 +10,16 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
+//base case in for loop
 // your code here
-  
+  function flatten(arr, newArr = []){
+    if (Array.isArray(arr[0])){
+      return flatten(arr)
+    }else {
+      newArr.push(arr[0])
+    }
+    
+  }
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;
