@@ -25,7 +25,6 @@ function flatten(arr) {
       if (!Array.isArray(ele)) {
         newArr.push(ele)
       }
-
   }
   return newArr
 }
